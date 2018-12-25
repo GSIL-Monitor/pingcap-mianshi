@@ -4,7 +4,7 @@
 # 尝试最小化安装
 在一台主机上启动3个容器
 
-#PD1
+# PD1
 
 ```bash
 docker run -d --name pd1 \
@@ -22,7 +22,7 @@ docker run -d --name pd1 \
   --initial-cluster="pd1=http://10.69.80.55:2380"
 ```
   
-  #TiKV1
+  # TiKV1
   
   ```bash
   docker run -d --name tikv1 \
@@ -37,7 +37,7 @@ docker run -d --name pd1 \
   --pd="10.69.80.55:2379"
 ```
 
-#启动TiDB
+# 启动TiDB
 
 ```bash
 docker run -d --name tidb \
@@ -49,7 +49,7 @@ docker run -d --name tidb \
   --path="10.69.80.55:2379"
   ```
 
-#使用musql链接db
+# 使用musql链接db
 
 ```bash
 $ mysql -h 127.0.0.1 -P 4000 -u root -D test
