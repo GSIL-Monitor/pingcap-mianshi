@@ -5,6 +5,7 @@
 在一台主机上启动3个容器
 
 #PD1
+
 ```bash
 docker run -d --name pd1 \
   -p 2379:2379 \
@@ -22,6 +23,7 @@ docker run -d --name pd1 \
 ```
   
   #TiKV1
+  
   ```bash
   docker run -d --name tikv1 \
   -p 20160:20160 \
@@ -34,7 +36,9 @@ docker run -d --name pd1 \
   --data-dir="/data/tikv1" \
   --pd="10.69.80.55:2379"
 ```
+
 #启动TiDB
+
 ```bash
 docker run -d --name tidb \
   -p 4000:4000 \
@@ -46,6 +50,7 @@ docker run -d --name tidb \
   ```
 
 #使用musql链接db
+
 ```bash
 $ mysql -h 127.0.0.1 -P 4000 -u root -D test
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
