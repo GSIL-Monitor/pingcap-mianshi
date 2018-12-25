@@ -1,0 +1,18 @@
+我们小作业实现 TiDB 在 K8s 之上的 yaml 部署方案，参考 TiDB Docker 部署文档写 YAML 描述文件实现在 K8s 里面部署 TiDB 集群方案。实现如下要求：
+- 使用 Local PV
+- 要求 PD/TiKV/TiDB 使用配置文件
+- 集群部署时能够自动设置 TiDB 密码
+- 集群需要有 Prometheus/Grafana 监控
+
+提示：
+- local pv 可参考 local-static-provisioner
+- pd/tikv/tidb 对应监控端口 2379, 20180, 10080
+- Grafana 监控面板可参考 dashboard-installer 导入
+
+https://github.com/pingcap/docs-cn/blob/master/op-guide/docker-deployment.md
+
+https://github.com/kubernetes-sigs/sig-storage-local-static-provisioner
+
+https://github.com/pingcap/tidb-docker-compose/tree/master/dashboard-installer
+
+注：不能使用 tidb-operator，不要求实现各组件扩缩容
