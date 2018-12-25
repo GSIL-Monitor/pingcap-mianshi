@@ -56,7 +56,7 @@ docker run -d --name tidb \
   --path="10.69.80.55:2379"
   ```
 
-# 使用musql链接db
+# 使用mysql链接db
 
 ```bash
 $ mysql -h 127.0.0.1 -P 4000 -u root -D test
