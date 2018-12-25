@@ -6,4 +6,24 @@
 
 |主机名|IP|部署服务|数据盘挂载|
 | :----: | :----: | :----: | :----: |
-|100.69.80.55|100.90.233.40|10.89.127.26|
+|IP1|IP2|IP3|
+
+# 启动PD1
+```bash
+docker run -d --name pd1 \
+  -p 2379:2379 \
+  -p 2380:2380 \
+  -v /etc/localtime:/etc/localtime:ro \
+  -v /data:/data \
+  pingcap/pd:latest \
+  --name="pd1" \
+  --data-dir="/data/pd1" \
+  --client-urls="http://0.0.0.0:2379" \
+  --advertise-client-urls="http://192.168.1.101:2379" \
+  --peer-urls="http://0.0.0.0:2380" \
+  --advertise-peer-urls="http://192.168.1.101:2380" \
+  --initial-cluster="pd1=http://192.168.1.101:2380"
+  ```
+  
+  
+  
